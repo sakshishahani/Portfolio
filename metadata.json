@@ -1,0 +1,8 @@
+{
+  "name": "Sakshi Shahani Portfolio",
+  "description": "A modern, responsive portfolio for a Product Management and UX focused undergraduate student from BITS Pilani, featuring dark mode, smooth animations, and a clean aesthetic.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
