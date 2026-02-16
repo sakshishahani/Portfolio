@@ -6,6 +6,23 @@ import { ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const CaseCompetitions: React.FC = () => {
+  // Helper to highlight specific words and metrics
+  const highlightKeywords = (text: string) => {
+    // Regex for specific keywords requested: Final round Shortlisted, top 100, 28.2k, top 3, 400+, 7+
+    const parts = text.split(/(Final round Shortlisted|top 100|28\.2k|top 3|400\+|7\+)/gi);
+    return parts.map((part, i) => {
+      const isKeyword = /(Final round Shortlisted|top 100|28\.2k|top 3|400\+|7\+)/i.test(part);
+      if (isKeyword) {
+        return (
+          <span key={i} className="font-bold text-brand-purple dark:text-brand-purple/90 bg-brand-purple/5 px-1 rounded">
+            {part}
+          </span>
+        );
+      }
+      return part;
+    });
+  };
+
   return (
     <Section 
       id="cases" 
@@ -37,25 +54,24 @@ const CaseCompetitions: React.FC = () => {
                 </h3>
               </div>
 
-              {/* 2. Photo (Competition Image) */}
+              {/* 2. Photo */}
               <div className="relative w-full aspect-video rounded-3xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-lg mb-6">
                 <img 
                   src={comp.image} 
                   alt={comp.title} 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                 />
-                {/* Subtle Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
               </div>
 
-              {/* 3. Description */}
+              {/* 3. Description with Keywords Highlighted */}
               <div className="mb-8">
                 <p className="text-slate-600 dark:text-slate-400 text-sm md:text-base leading-relaxed">
-                  {comp.description}
+                  {highlightKeywords(comp.description)}
                 </p>
               </div>
 
-              {/* 4. View Deck Button (Bottom Right) */}
+              {/* 4. View Deck Button */}
               <div className="mt-auto flex justify-end">
                 <motion.a 
                   href={comp.deckUrl}

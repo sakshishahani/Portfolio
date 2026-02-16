@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Section from './Section';
 import { PORS } from '../constants';
@@ -6,7 +5,6 @@ import { ExternalLink, ShieldCheck, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const PORs: React.FC = () => {
-  // Helper to highlight numbers and key metrics
   const highlightMetrics = (text: string) => {
     const parts = text.split(/(₹\d+(?:\.\d+)?L\+?|\d+%|\d+(?:,\d+)?\+?|1M\+)/g);
     return parts.map((part, i) => {
@@ -39,12 +37,9 @@ const PORs: React.FC = () => {
             transition={{ duration: 0.5, delay: index * 0.1 }}
             className="group relative bg-white dark:bg-slate-900/60 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-xl p-8 md:p-10 flex flex-col overflow-hidden transition-all duration-500 hover:border-brand-purple/30"
           >
-            {/* Background Glows */}
             <div className="absolute top-0 right-0 w-48 h-48 bg-brand-purple/5 rounded-full blur-[80px] -mr-20 -mt-20 group-hover:bg-brand-purple/10 transition-colors" />
-            <div className="absolute bottom-0 left-0 w-32 h-32 bg-brand-blue/5 rounded-full blur-[60px] -ml-10 -mb-10 opacity-0 group-hover:opacity-100 transition-opacity" />
-
+            
             <div className="relative z-10 flex flex-col h-full">
-              {/* 1. Card Header: Title & Role */}
               <div className="mb-6">
                 <div className="flex items-center justify-between gap-4 mb-2">
                   <h3 className="text-2xl md:text-3xl font-display font-bold tracking-tight text-slate-900 dark:text-white">
@@ -70,19 +65,16 @@ const PORs: React.FC = () => {
                 )}
               </div>
 
-              {/* 2. Photo Showcase - Cleaned up to match Projects/Experience style */}
               {por.image && (
-                <div className="mb-8 w-full aspect-video rounded-2xl overflow-hidden shadow-lg border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-800 group-hover:scale-[1.01] transition-transform duration-700">
+                <div className="mb-8 w-full aspect-video rounded-2xl overflow-hidden shadow-lg border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-800">
                   <img 
                     src={por.image} 
                     alt={`${por.organization} showcase`} 
-                    className="w-full h-full object-cover" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                   />
-                  {/* Removed the black gradient overlay for clarity */}
                 </div>
               )}
 
-              {/* 3. Bullet Points */}
               <div className="space-y-4 flex-grow">
                 {por.description.map((bullet, bIdx) => (
                   <div key={bIdx} className="flex items-start gap-4 group/bullet">
@@ -94,13 +86,11 @@ const PORs: React.FC = () => {
                 ))}
               </div>
 
-              {/* Floating Decoration Icon */}
               <div className="absolute top-8 right-8 text-slate-100 dark:text-slate-800 opacity-20 pointer-events-none group-hover:opacity-40 transition-opacity">
                 <Star size={64} strokeWidth={1} />
               </div>
             </div>
 
-            {/* Subtle Gradient Line at Bottom */}
             <div className="absolute bottom-0 left-10 right-10 h-0.5 bg-gradient-to-r from-transparent via-brand-purple/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
           </motion.div>
         ))}
