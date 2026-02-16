@@ -23,10 +23,11 @@ export interface CaseCompItem {
 
 export interface ProjectItem {
   title: string;
-  description: string;
+  description: string[];
   image: string;
   link?: string;
-  tags: string[];
+  linkTitle?: string;
+  tags?: string[];
 }
 
 export interface PORItem {

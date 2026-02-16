@@ -70,18 +70,61 @@ export const CASE_COMPS: CaseCompItem[] = [
 
 export const PROJECTS: ProjectItem[] = [
   {
-    title: "FinTrack UX Case Study",
-    description: "A comprehensive redesign of a personal finance app focusing on accessibility and financial literacy for young adults.",
-    image: "https://picsum.photos/id/10/800/450",
-    tags: ["UX Research", "Figma", "Accessibility"],
-    link: "#"
+    title: "Nextleap, Top PM Fellow",
+    image: "https://lh3.googleusercontent.com/d/1jI1lZRN2gWOWovz9dIxzIBtbfYxQZGyn",
+    link: "https://drive.google.com/file/d/1NeAKlgLKmhmiHp9t4HfY8NY9HnV9b0Uv/view?usp=sharing",
+    linkTitle: "View Project",
+    description: [
+      "Selected as a NextLeap Top Fellow from a cohort of 300+, recognizing leadership, problem-solving, and impact potential.",
+      "Built an MVP for a to-do list app by conducting user surveys and interviews, creating wireframes, and iterating based on feedback."
+    ]
   },
   {
-    title: "Market Insight Dashboard",
-    description: "A Python-based visualization tool for tracking consumer sentiment trends across social media platforms.",
-    image: "https://picsum.photos/id/20/800/450",
-    tags: ["Data Analytics", "Python", "Tableau"],
-    link: "#"
+    title: "Python Driven Warehouse Layout & Supply Chain Optimization⁠",
+    image: "https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=1000&auto=format&fit=crop",
+    link: "https://github.com/sakshishahani/craft-algorithm",
+    linkTitle: "View Project",
+    description: [
+      "Developed Python implementations of CRAFT and CORELAP algorithms to optimize warehouse layout and workflow efficiency.",
+      "Achieved 30%+ reduction in setup costs through layout optimization and data driven facility planning enhancing space utilisation"
+    ]
+  },
+  {
+    title: "FoodSwift: Smart Availability & Reliability Engine",
+    image: "https://lh3.googleusercontent.com/d/18JcSBykJM5uZBlnhJedh-trgVy7Ir5mw",
+    link: "https://drive.google.com/file/d/1bKoozCQUZjb7gf6luP5M6RFCADLPbGu1/view?usp=sharing",
+    linkTitle: "View Project",
+    description: [
+      "Diagnosed a 44.6% decline in successful orders by analyzing cancellation data (376% increase), identifying restaurant-side operational constraints as the primary root cause of user churn.",
+      "Built and prioritized a Smart Availability system (real-time inventory signals, reliability ranking, intelligent substitutions) targeting 40–50% reduction in unavailability cancellations and 30–40% GMV recovery."
+    ]
+  },
+  {
+    title: "Schmooze Store Optimization",
+    image: "https://lh3.googleusercontent.com/d/1cw2J0R1Xf_r7OCSm8t8tQ3Et4umg0SCo",
+    link: "https://drive.google.com/file/d/1-9519YHwoQU6MjlRS-sbaE6jhbygQHAy/view",
+    linkTitle: "View Project",
+    description: [
+      "Proposed ASO improvements and landing page redesigns for Schmooze, targeting higher installs and conversion rates."
+    ]
+  },
+  {
+    title: "SQL Driven Insights for Namma Yatri Trips⁠",
+    image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1000&auto=format&fit=crop",
+    link: "https://github.com/sakshishahani/SQL_NammaYatri",
+    linkTitle: "View Project",
+    description: [
+      "Analyzed 2,000+ trips using SQL to map the ride funnel and identify 80% driver cancellations and 45% ride completion.",
+      "Built SQL workflows to derive insights on 96.28% OTP conversion, top drivers, and high demand time slots for ride optimization."
+    ]
+  },
+  {
+    title: "Data Driven Vortex Shedding Mitigation Methods",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop",
+    description: [
+      "Processed and visualized 40+ large datasets, 100K+ data points each using Excel and MATLAB to analyze vortex shedding patterns.",
+      "Conducted 20+ literature reviews to identify effective techniques and required equipment for wind tunnel experiments"
+    ]
   }
 ];
 
@@ -101,6 +144,7 @@ export const PORS: PORItem[] = [
   },
   {
     organization: "PMP Mentor",
+    position: "Student Mentor",
     image: "https://yt3.googleusercontent.com/ytc/AIdro_mHtaHHyZbNIW_pFWaP1I2QqNXkur4dFyRMGZonKcivTA=s900-c-k-c0x00ffffff-no-rj",
     description: [
       "Guided and supported first-year students, offering tailored academic advice and facilitating their exploration of college life.",

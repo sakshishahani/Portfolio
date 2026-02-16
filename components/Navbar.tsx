@@ -22,14 +22,19 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
   ];
 
   useEffect(() => {
+    // Improved Intersection Observer logic for snappier section switching
     const options = {
       root: null,
-      rootMargin: '-80px 0px -40% 0px', // Adjust margin for the navbar height and trigger point
+      // The observer "window" starts just below the navbar (80px) 
+      // and ends near the top of the screen to ensure the section 
+      // currently "dominant" at the top is the one highlighted.
+      rootMargin: '-85px 0px -80% 0px',
       threshold: 0,
     };
 
     const handleIntersect = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
+        // When a section enters the small detection window at the top
         if (entry.isIntersecting) {
           setActiveSection(entry.target.id);
         }
@@ -43,7 +48,21 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
       if (element) observer.observe(element);
     });
 
-    return () => observer.disconnect();
+    // Fallback for reaching the absolute bottom of the page (where 'Contact' might not hit the top margin)
+    const handleScroll = () => {
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50) {
+        setActiveSection('contact');
+      } else if (window.scrollY < 50) {
+        setActiveSection('about');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
@@ -60,6 +79,9 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
         top: offsetPosition,
         behavior: 'smooth',
       });
+      
+      // Immediate feedback on click
+      setActiveSection(id);
     }
     setIsOpen(false);
   };
@@ -86,7 +108,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
                 onClick={(e) => handleNavClick(e, link.id)}
                 className={`text-sm font-bold transition-all duration-300 relative py-2 ${
                   isActive 
-                    ? 'text-brand-purple' 
+                    ? 'text-brand-purple scale-105' 
                     : 'text-slate-600 dark:text-slate-300 hover:text-brand-purple/70'
                 }`}
               >

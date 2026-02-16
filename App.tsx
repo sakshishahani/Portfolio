@@ -32,9 +32,7 @@ const App: React.FC = () => {
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       
       <main className="flex-grow pt-20">
-        {/* The Hero component now has id="about" */}
         <Hero />
-        
         <Experience />
         <CaseCompetitions />
         <PORs />

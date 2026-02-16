@@ -37,7 +37,7 @@ const PORs: React.FC = () => {
             viewport={{ once: true, margin: "-50px" }}
             whileHover={{ y: -8, scale: 1.01 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="group relative bg-white dark:bg-slate-900/50 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-xl p-8 md:p-10 flex flex-col overflow-hidden transition-all duration-500 hover:border-brand-purple/30"
+            className="group relative bg-white dark:bg-slate-900/60 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-xl p-8 md:p-10 flex flex-col overflow-hidden transition-all duration-500 hover:border-brand-purple/30"
           >
             {/* Background Glows */}
             <div className="absolute top-0 right-0 w-48 h-48 bg-brand-purple/5 rounded-full blur-[80px] -mr-20 -mt-20 group-hover:bg-brand-purple/10 transition-colors" />
@@ -70,7 +70,7 @@ const PORs: React.FC = () => {
                 )}
               </div>
 
-              {/* 2. Photo Showcase */}
+              {/* 2. Photo Showcase - Cleaned up to match Projects/Experience style */}
               {por.image && (
                 <div className="mb-8 w-full aspect-video rounded-2xl overflow-hidden shadow-lg border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-800 group-hover:scale-[1.01] transition-transform duration-700">
                   <img 
@@ -78,7 +78,7 @@ const PORs: React.FC = () => {
                     alt={`${por.organization} showcase`} 
                     className="w-full h-full object-cover" 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+                  {/* Removed the black gradient overlay for clarity */}
                 </div>
               )}
 
