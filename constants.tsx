@@ -44,9 +44,12 @@ export const EXPERIENCES: ExperienceItem[] = [
 export const CASE_COMPS: CaseCompItem[] = [
   {
     title: "GenAI Travel Assistant – Neovate (ISB)",
-    description: "Final round Shortlisted; designed a MVP roadmap for a GenAI travel assistant, using context planning and collaborative optimisation.",
+    description: "Selected as Runner up among 400+ teams; presented a GenAI GTM strategy for NaviMate in the national finals at ISB Hyderabad",
     image: "https://lh3.googleusercontent.com/d/1joh-Y53sXDQYGXGVjjV6m2KH1UFgiqn8",
-    deckUrl: "https://drive.google.com/file/u/2/d/1EML3_4FOIJQTV3-ZQVvD68hCkOKne66e/view?usp=sharing"
+    links: [
+      { label: "View Solution", url: "https://drive.google.com/file/d/1EML3_4FOIJQTV3-ZQVvD68hCkOKne66e/view?usp=sharing" },
+      { label: "View GTM Strategy", url: "https://drive.google.com/file/d/1jmvbPQJtCgeskttmmKbCrXVMbNuQhPfo/view?usp=sharing" }
+    ]
   },
   {
     title: "Jio creative hackathon",

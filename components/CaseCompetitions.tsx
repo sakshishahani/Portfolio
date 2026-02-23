@@ -8,10 +8,10 @@ import { motion } from 'framer-motion';
 const CaseCompetitions: React.FC = () => {
   // Helper to highlight specific words and metrics
   const highlightKeywords = (text: string) => {
-    // Regex for specific keywords requested: Final round Shortlisted, top 100, 28.2k, top 3, 400+, 7+
-    const parts = text.split(/(Final round Shortlisted|top 100|28\.2k|top 3|400\+|7\+)/gi);
+    // Regex for specific keywords requested: Final round Shortlisted, top 100, 28.2k, top 3, 400+, 7+, Runner up
+    const parts = text.split(/(Final round Shortlisted|top 100|28\.2k|top 3|400\+|7\+|Runner up)/gi);
     return parts.map((part, i) => {
-      const isKeyword = /(Final round Shortlisted|top 100|28\.2k|top 3|400\+|7\+)/i.test(part);
+      const isKeyword = /(Final round Shortlisted|top 100|28\.2k|top 3|400\+|7\+|Runner up)/i.test(part);
       if (isKeyword) {
         return (
           <span key={i} className="font-bold text-brand-purple dark:text-brand-purple/90 bg-brand-purple/5 px-1 rounded">
@@ -71,19 +71,36 @@ const CaseCompetitions: React.FC = () => {
                 </p>
               </div>
 
-              {/* 4. View Deck Button */}
-              <div className="mt-auto flex justify-end">
-                <motion.a 
-                  href={comp.deckUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-bold shadow-lg shadow-brand-purple/10 hover:shadow-brand-purple/30 transition-all group/btn border border-white/10"
-                >
-                  View Deck
-                  <ExternalLink size={16} className="group-hover/btn:rotate-12 transition-transform" />
-                </motion.a>
+              {/* 4. Action Buttons */}
+              <div className="mt-auto flex flex-wrap justify-end gap-3">
+                {comp.links ? (
+                  comp.links.map((link, lIndex) => (
+                    <motion.a 
+                      key={lIndex}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-bold shadow-lg shadow-brand-purple/10 hover:shadow-brand-purple/30 transition-all group/btn border border-white/10"
+                    >
+                      {link.label}
+                      <ExternalLink size={16} className="group-hover/btn:rotate-12 transition-transform" />
+                    </motion.a>
+                  ))
+                ) : comp.deckUrl ? (
+                  <motion.a 
+                    href={comp.deckUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-bold shadow-lg shadow-brand-purple/10 hover:shadow-brand-purple/30 transition-all group/btn border border-white/10"
+                  >
+                    View Deck
+                    <ExternalLink size={16} className="group-hover/btn:rotate-12 transition-transform" />
+                  </motion.a>
+                ) : null}
               </div>
             </div>
 

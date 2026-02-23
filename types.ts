@@ -18,7 +18,8 @@ export interface CaseCompItem {
   title: string;
   description: string;
   image: string;
-  deckUrl: string;
+  deckUrl?: string;
+  links?: ExperienceLink[];
 }
 
 export interface ProjectItem {

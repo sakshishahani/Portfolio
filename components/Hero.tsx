@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <a 
-              href="https://drive.google.com/file/d/19to4ha53yXD9Udh2B73qyO1ktErusmU9/view?usp=sharing"
+              href="https://drive.google.com/file/d/1d6e2x3Jm8MUiFj_tXHd9XcD4mNX-bEaL/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3.5 bg-gradient-to-r from-brand-purple to-brand-blue text-white rounded-2xl font-bold shadow-lg shadow-brand-purple/20 hover:shadow-brand-purple/30 hover:-translate-y-1 active:scale-95 transition-all flex items-center group text-sm md:text-base"
