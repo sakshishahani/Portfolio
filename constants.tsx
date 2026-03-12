@@ -138,11 +138,11 @@ export const PORS: PORItem[] = [
     link: "https://www.ted.com/tedx/events/61565",
     image: "https://lh3.googleusercontent.com/d/1is407bFwy1paTmRtF-cmLAp0fMw3Ailk",
     description: [
-      "Led India’s oldest institutional TEDx conference, managing 50+ members across publicity, design, sponsorship, and content.",
-      "Spearheaded a ₹16.5L budget, driving 35% YoY revenue growth through strategic financial planning and execution.",
-      "Generated ₹38L+ in sponsorships through strategic outreach and stakeholder management, enhancing event scale and quality.",
+      "Led Indiaʼs oldest institutional TEDx conference, managing 50+ members across publicity, design, sponsorship, and content.",
+      "Spearheaded a ₹24.8L budget, driving 56% YoY revenue growth through strategic financial planning and execution.",
+      "Generated ₹35L+ in sponsorships through strategic outreach and stakeholder management, enhancing event scale and quality.",
       "Boosted social media presence by 55% YoY with 1M+ Instagram impressions, enhancing brand visibility and audience engagement.",
-      "Executed a successful on-campus merchandise campaign with 1,800+ unit sales, amplifying brand affinity among attendees."
+      "Executed a successful on-campus merchandise campaign with 3,000+ unit sales, boosting conference attendance by 38%."
     ]
   },
   {
