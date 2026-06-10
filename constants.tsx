@@ -52,6 +52,12 @@ export const CASE_COMPS: CaseCompItem[] = [
     ]
   },
   {
+    title: "Fin-O-Hack 2026 (DTU × Paytm Hackathon)",
+    description: "Finalist among 400+ teams for building SplitSense, an AI powered Paytm native group payments and smart bill splitting system.",
+    image: "https://lh3.googleusercontent.com/d/19xvLdICfnRmrDSrbK97k9fiklXHM1RgO",
+    deckUrl: "https://drive.google.com/file/d/1_49RR70xlPyEdFYuJh5UUqesYmOyKCIR/view?usp=sharing"
+  },
+  {
     title: "Jio creative hackathon",
     description: "Selected in the top 100 out of 28.2k participants, securing a pre-internship interview for developing GTM for Jio in dishwashers.",
     image: "https://lh3.googleusercontent.com/d/1o3TnnjP_I5nqIENZAq0AJoyNrPB7mt9i",
@@ -100,6 +106,16 @@ export const PROJECTS: ProjectItem[] = [
     description: [
       "Diagnosed a 44.6% decline in successful orders by analyzing cancellation data (376% increase), identifying restaurant-side operational constraints as the primary root cause of user churn.",
       "Built and prioritized a Smart Availability system (real-time inventory signals, reliability ranking, intelligent substitutions) targeting 40–50% reduction in unavailability cancellations and 30–40% GMV recovery."
+    ]
+  },
+  {
+    title: "Financial Market Analysis & Predictive Modeling",
+    image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=1000&auto=format&fit=crop",
+    link: "https://github.com/sakshishahani/financial-market-analysis-gmm",
+    linkTitle: "View Project",
+    description: [
+      "Analyzed 100 NIFTY firms using Bloomberg, Python (pandas), panel regression and GMM explaining 65.7% of firm value variation.",
+      "Evaluated 8 financial and ESG factors over 10+ years, finding P/B ratio and valuation momentum (p < 0.001) as key value drivers."
     ]
   },
   {

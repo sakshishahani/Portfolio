@@ -8,10 +8,10 @@ import { motion } from 'framer-motion';
 const CaseCompetitions: React.FC = () => {
   // Helper to highlight specific words and metrics
   const highlightKeywords = (text: string) => {
-    // Regex for specific keywords requested: Final round Shortlisted, top 100, 28.2k, top 3, 400+, 7+, Runner up
-    const parts = text.split(/(Final round Shortlisted|top 100|28\.2k|top 3|400\+|7\+|Runner up)/gi);
+    // Regex for specific keywords requested: Final round Shortlisted, top 100, 28.2k, top 3, 400+ teams, 400+, 7+, Runner up, Finalist
+    const parts = text.split(/(Final round Shortlisted|top 100|28\.2k|top 3|400\+ teams|400\+|7\+|Runner up|Finalist)/gi);
     return parts.map((part, i) => {
-      const isKeyword = /(Final round Shortlisted|top 100|28\.2k|top 3|400\+|7\+|Runner up)/i.test(part);
+      const isKeyword = /(Final round Shortlisted|top 100|28\.2k|top 3|400\+ teams|400\+|7\+|Runner up|Finalist)/i.test(part);
       if (isKeyword) {
         return (
           <span key={i} className="font-bold text-brand-purple dark:text-brand-purple/90 bg-brand-purple/5 px-1 rounded">

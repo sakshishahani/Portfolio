@@ -9,9 +9,9 @@ const Projects: React.FC = () => {
   // Helper to highlight numbers and metrics for high impact visibility
   const highlightMetrics = (text: string) => {
     // Regex to match percentages, monetary values, and large counts (including 300+, 22%, 35%, D30, 2,000+, 96.28%, 100K+, 40+, 20+, 80%, 45%)
-    const parts = text.split(/(\d+(?:,\d+)?(?:\.\d+)?%[+-]?|₹\d+(?:\.\d+)?L\+?|\d+(?:–\d+)?%|1M\+?|1,800\+?|300\+?|D\d+|2,000\+?|100K\+?|40\+?|20\+?)/g);
+    const parts = text.split(/(\d+(?:,\d+)?(?:\.\d+)?%[+-]?|₹\d+(?:\.\d+)?L\+?|\d+(?:–\d+)?%|1M\+?|1,800\+?|300\+?|D\d+|2,000\+?|100K\+?|40\+?|20\+?|100 NIFTY firms|Bloomberg|Python \(pandas\)|panel regression|GMM|8 financial and ESG factors|10\+ years|P\/B ratio|valuation momentum|p < 0\.001)/g);
     return parts.map((part, i) => {
-      const isMetric = /(\d+(?:,\d+)?(?:\.\d+)?%[+-]?|₹\d+(?:\.\d+)?L\+?|\d+(?:–\d+)?%|1M\+?|1,800\+?|300\+?|D\d+|2,000\+?|100K\+?|40\+?|20\+?)/.test(part);
+      const isMetric = /(\d+(?:,\d+)?(?:\.\d+)?%[+-]?|₹\d+(?:\.\d+)?L\+?|\d+(?:–\d+)?%|1M\+?|1,800\+?|300\+?|D\d+|2,000\+?|100K\+?|40\+?|20\+?|100 NIFTY firms|Bloomberg|Python \(pandas\)|panel regression|GMM|8 financial and ESG factors|10\+ years|P\/B ratio|valuation momentum|p < 0\.001)/.test(part);
       if (isMetric) {
         return (
           <span key={i} className="font-bold text-brand-purple dark:text-brand-purple/90 bg-brand-purple/5 px-1 rounded">
