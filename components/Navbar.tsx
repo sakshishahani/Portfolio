@@ -21,28 +21,35 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
   ];
 
   useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: '-20% 0px -70% 0px', // Trigger when section is in the top-ish part of viewport
-      threshold: 0,
-    };
+    const handleScroll = () => {
+      // Check if user is at the bottom of the page first
+      const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50;
+      if (isAtBottom) {
+        setActiveSection(navLinks[navLinks.length - 1].id);
+        return;
+      }
 
-    const handleIntersect = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
+      const offset = 120; // Offset for detection
+      let currentSection = 'about';
+
+      for (const link of navLinks) {
+        const el = document.getElementById(link.id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= offset && rect.bottom > offset) {
+            currentSection = link.id;
+            break;
+          }
         }
-      });
+      }
+
+      setActiveSection(currentSection);
     };
 
-    const observer = new IntersectionObserver(handleIntersect, options);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Run once initially
 
-    navLinks.forEach((link) => {
-      const element = document.getElementById(link.id);
-      if (element) observer.observe(element);
-    });
-
-    return () => observer.disconnect();
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
